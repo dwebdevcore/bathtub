@@ -10,7 +10,11 @@ let interval;
 function Water() {
     const [activeLevel, setActiveLevel] = useState(0);
     const [levels, setLevels] = useState([]);
-    const [status, setStatus] = useState('')
+    const [status, setStatus] = useState('');
+
+    let handleWaterCounter = () => {
+        return activeLevel * 20;
+    }
 
     const increaseWaterLevel = () => {
         setStatus('increment')
@@ -28,9 +32,10 @@ function Water() {
 
     const generateWaterLevel = () => {
         return levels.map((level, index) => {
-            return <WaterItem key={index} level={level}/>
+            return <WaterItem key={index} level={level - 1}/>
         })
     }
+
     useEffect(() => {
         if(levels.length === 5 || !levels.length){
             clearInterval(interval)
@@ -40,16 +45,17 @@ function Water() {
 
     useEffect(() => {
         if (status === 'increment' && activeLevel && levels.length < 5) {
-            setLevels(prevLevels => [...prevLevels, activeLevel]);
+            setLevels(prevLevels => [ activeLevel, ...prevLevels]);
         } else if (status === 'decrement' && levels.length > 0) {
-            setLevels(prevLevels => prevLevels.slice(0, -1));
+            setLevels(prevLevels => prevLevels.slice(1));
         }
     }, [activeLevel]);
 
     return (
         <div className="water-container">
-            {activeLevel}
-            {levels && JSON.stringify(levels)}
+            <div className="water-container__counter">
+                {handleWaterCounter()}
+            </div>
             <div className="water-container__content">
                 {generateWaterLevel()}
             </div>

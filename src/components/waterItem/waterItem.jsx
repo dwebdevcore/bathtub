@@ -7,7 +7,7 @@ function WaterItem({
                        text = 'water level' }) {
     return (
         <div className="water-container__item">
-            <span>{text + level}</span>
+            <span>{text + ' ' + level}</span>
         </div>
     );
 }

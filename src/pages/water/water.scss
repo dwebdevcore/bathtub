@@ -5,6 +5,11 @@
   align-items: center;
   min-height: 100vh;
 
+  .water-container__counter{
+    margin: 20px;
+    font-size: 18px;
+  }
+
   .water-container__content{
     width: 500px;
     height: 100px;
