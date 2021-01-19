@@ -1,14 +1,10 @@
 import React from "react";
-import './App.css';
-import Water from "./pages/Water/Water";
 
-
+import Water from "./pages/water/water";
 
 function App() {
   return (
-    <div className="main_container">
       <Water />
-    </div>
   );
 }
 

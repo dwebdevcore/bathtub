@@ -1,0 +1,23 @@
+.water-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+  .water-container__content{
+    width: 500px;
+    height: 100px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: 1px dashed darkblue;
+  }
+
+  .water-container__btn{
+    display: flex;
+  }
+}
+
+
