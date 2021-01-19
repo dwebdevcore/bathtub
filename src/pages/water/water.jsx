@@ -60,8 +60,8 @@ function Water() {
                 {generateWaterLevel()}
             </div>
             <div className="water-container__btn">
-                <ActionButton onClickEvent={increaseWaterLevel} text="+" />
-                <ActionButton onClickEvent={decreaseWaterLevel} text="-" />
+                <ActionButton onClickEvent={increaseWaterLevel} text="+" disabled={status}/>
+                <ActionButton onClickEvent={decreaseWaterLevel} text="-" disabled={status}/>
             </div>
         </div>
     );

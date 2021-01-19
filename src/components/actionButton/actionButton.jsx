@@ -7,12 +7,14 @@ function ActionButton({
                           onClickEvent,
                           className = '',
                           children,
+                          disabled,
                           ...rest
                       }) {
     return (
         <button className={`button_container ${className}`}
                 onClick={onClickEvent}
-                rest>
+                rest
+                disabled={disabled}>
             {text}
         </button>
     );
