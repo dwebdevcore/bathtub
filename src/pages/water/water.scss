@@ -5,12 +5,12 @@
   align-items: center;
   min-height: 100vh;
 
-  .water-container__counter{
+  &__counter{
     margin: 20px;
     font-size: 18px;
   }
 
-  .water-container__content{
+  &__content{
     width: 500px;
     height: 100px;
     background-color: aliceblue;
@@ -20,7 +20,7 @@
     border: 1px dashed darkblue;
   }
 
-  .water-container__btn{
+  &__btn{
     display: flex;
   }
 }

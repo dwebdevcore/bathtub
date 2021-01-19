@@ -3,11 +3,13 @@ import React from "react";
 import './waterItem.scss';
 
 function WaterItem({
-                       level,
-                       text = 'water level' }) {
+    level,
+    text = 'water level',
+    className = '',
+}) {
     return (
-        <div className="water-container__item">
-            <span>{text + ' ' + level}</span>
+        <div className={`water-container__item ${className}`}>
+            <span>{`${text} ${level}`}</span>
         </div>
     );
 }

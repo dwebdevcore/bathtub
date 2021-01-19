@@ -3,18 +3,17 @@ import React from "react";
 import './actionButton.scss';
 
 function ActionButton({
-                          text = 'text',
-                          onClickEvent,
-                          className = '',
-                          children,
-                          disabled,
-                          ...rest
-                      }) {
+    text = 'text',
+    onClickEvent = () => {},
+    className = '',
+    disabled,
+    ...rest
+}) {
     return (
-        <button className={`button_container ${className}`}
-                onClick={onClickEvent}
-                rest
-                disabled={disabled}>
+        <button onClick={onClickEvent}
+                disabled={disabled}
+                className={`action-button ${className}`}
+                rest>
             {text}
         </button>
     );
